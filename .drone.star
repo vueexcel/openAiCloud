@@ -219,11 +219,9 @@ def appBuilds(ctx):
         "commands": [
             "apk add zip",
             "mkdir -p assets/skeleton/",
-            "cp -R * assets/skeleton/",
-            "cp -R {.vscode,.editorconfig,.eslintrc.json,.gitignore,.npmrc,.prettierrc.json} assets/skeleton/",
-            "cd assets/skeleton/",
-            "rm -Rf dev/docker/traefik/certificates/* dist node_modules",
-            "cd ../",
+            "cp -R .vscode dev public src tests assets/skeleton/",
+            "cp .editorconfig .eslintrc.json .gitignore .npmrc .prettierrc.json docker-compose.yml LICENSE package.json pnpm-lock.yaml README.md tsconfig.json vite.config.ts assets/skeleton/",
+            "cd assets/",
             "zip -r skeleton-%s.zip skeleton/" % version,
         ],
         "when": {
