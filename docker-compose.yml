@@ -1,6 +1,8 @@
 services:
   ocis:
     image: ${OCIS_IMAGE:-owncloud/ocis-rolling:latest}
+    extra_hosts:
+      - host.docker.internal:${DOCKER_HOST:-host-gateway}
     entrypoint: /bin/sh
     command: ['-c', 'ocis init || true && ocis server']
     environment:
@@ -72,6 +74,3 @@ services:
 
 volumes:
   ocis-config:
-
-networks:
-  traefik:
