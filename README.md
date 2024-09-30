@@ -2,22 +2,26 @@
 All the bits and pieces for an easy start to build your own web apps and extensions for ownCloud Infinite Scale.
 
 ## Getting Started
-The following instructions will help you set up your own web app/extension and a proper development environment.
+The following instructions will help you set up a development environment for building your own app/extension.
 
 To get started, clone the repository and then follow the instructions below.
 
 ### Development Environment
-1. Install [pnpm](https://pnpm.io/installation) if you haven't already. Our package.json holds a `packageManager` field and we recommend to use [pnpm with corepack](https://pnpm.io/installation#using-corepack).
-2. Install dependencies and run a first build process by running:
+1. Install [pnpm](https://pnpm.io/installation) if you haven't already. 
+   > **Correct version:** Our `package.json` holds a `packageManager` field. Please make sure that you have at least the same major version of pnpm installed.
+   
+   > **Corepack:** We recommend to use [pnpm with corepack](https://pnpm.io/installation#using-corepack) to handle the pnpm version automatically.
+2. Install dependencies and run the build process for the first time by running:
    ```bash
    pnpm install && pnpm build:w
    ```
+   > **Note:** The `build:w` script will watch for changes in your files and automatically recompile your app. You can stop the process with `Ctrl+C`.
 3. Add `127.0.0.1 host.docker.internal` to your `/etc/hosts` file. We currently only support local development with Docker on Linux and macOS.
 4. Start the development server:
    ```bash
    docker compose up
    ```
-5. Open your browser and navigate to `https://host.docker.internal:9200` to see your oCIS dev environment. The default user is `admin` with password `admin`. Your app is automatically loaded.
+5. Open your browser and navigate to https://host.docker.internal:9200 to see your oCIS development environment. The default user is `admin` with password `admin`. Your app is automatically loaded.
 
 ### Develop Your App
 You can start developing your app by modifying the files in the `src` folder. The development server will automatically reload your changes as long as you keep a running process of `pnpm build:w`. In this setup you currently need a page reload to see your changes.
