@@ -1,6 +1,6 @@
-OC_CI_NODEJS = "owncloudci/nodejs:18"
-OC_CI_BAZEL_BUILDIFIER = "owncloudci/bazel-buildifier"
-OC_CI_ALPINE = "owncloudci/alpine:latest"
+OC_CI_NODEJS = "opencloud-eu/nodejs:18"
+OC_CI_BAZEL_BUILDIFIER = "opencloud-eu/bazel-buildifier"
+OC_CI_ALPINE = "opencloud-eu/alpine:latest"
 
 PLUGINS_GITHUB_RELEASE = "plugins/github-release:1"
 

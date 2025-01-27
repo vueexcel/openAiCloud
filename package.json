@@ -1,11 +1,11 @@
 {
   "name": "web-app-skeleton",
   "version": "0.2.0",
-  "description": "All the bits and pieces for an easy start to build your own web apps and extensions for ownCloud Infinite Scale.",
+  "description": "All the bits and pieces for an easy start to build your own web apps and extensions for OpenCloud.",
   "license": "Apache-2.0",
-  "author": "ownCloud",
+  "author": "OpenCloud",
   "private": true,
-  "homepage": "https://github.com/owncloud/web-app-skeleton",
+  "homepage": "https://github.com/opencloud-eu/web-app-skeleton",
   "type": "module",
   "scripts": {
     "build": "pnpm vite build",

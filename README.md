@@ -1,5 +1,5 @@
 # web-app-skeleton
-This repository provides all the bits and pieces for an easy start to build your own web app or extension for ownCloud Infinite Scale.
+This repository provides all the bits and pieces for an easy start to build your own web app or extension for OpenCloud.
 
 ## Getting Started
 The following instructions will help you to set up your own web app/extension and a proper development environment.
@@ -25,7 +25,7 @@ Currently local development requires docker and is only supported on Linux and m
    ```bash
    docker compose up
    ```
-1. Open your browser and navigate to `https://host.docker.internal:9200` to see your oCIS dev environment. The default user is `admin` with password `admin`. Your app from this directory is automatically loaded.
+1. Open your browser and navigate to `https://host.docker.internal:9200` to see your OpenCloud dev environment. The default user is `admin` with password `admin`. Your app from this directory is automatically loaded.
 
 ### Develop Your App
 You can start developing your app by modifying the files in the `src` folder. The development server will automatically reload your changes as long as you keep a running process of `pnpm build:w`. In this setup you currently need a page reload to see your changes.
@@ -33,13 +33,13 @@ You can start developing your app by modifying the files in the `src` folder. Th
 You should start by rephrasing the app name `skeleton` to your desired app name in the following files:
 - package.json
 - vite.config.ts
-- dev/docker/ocis/apps.yaml (if you need config for your app)
+- dev/docker/opencloud/apps.yaml (if you need config for your app)
 - src/index.ts
 - tests/unit/App.spec.ts
 
 Don't forget to rename the root directory as well.
 
-More details and examples about app/extension development are available in the [developer documentation](https://owncloud.dev/clients/web/extension-system/).
+More details and examples about app/extension development are available in the [developer documentation](https://docs.opencloud.eu/clients/web/extension-system/).
 
 Once you have a working extension, consider making it available via git.
 
@@ -50,11 +50,11 @@ pnpm test:unit
 ```
 Feel free to structure your tests as you see fit. The test files are located in the `tests/unit` folder.
 
-In case you want to set up e2e tests with [playwright](https://playwright.io), you can see working examples in our repos [web](https://github.com/owncloud/web) and [web-extensions](https://github.com/owncloud/web-extensions).
+In case you want to set up e2e tests with [playwright](https://playwright.io), you can see working examples in our repos [web](https://github.com/opencloud-eu/web) and [web-extensions](https://github.com/opencloud-eu/web-extensions).
 
 ### Build For Production
-Running `pnpm build` will create a production build of your app in the `dist` folder. It also copies over all static assets placed in the `public` folder. You can then deploy the contents of the `dist` folder to your production environment, see [app deployment](https://owncloud.dev/services/web/#web-apps).
+Running `pnpm build` will create a production build of your app in the `dist` folder. It also copies over all static assets placed in the `public` folder. You can then deploy the contents of the `dist` folder to your production environment, see [app deployment](https://docs.opencloud.eu/services/web/#web-apps).
 
 ## Publish
-We'd be happy to see your app in our [awesome-ocis list](https://github.com/owncloud/awesome-ocis/blob/main/README.md). Feel free to make a pull request to the README.md file to add your app.
-If you feel that your app has reached a sufficient level of maturity and you want to publish it, please follow our [publishing guide](https://github.com/owncloud/awesome-ocis/tree/main/webApps).
+We'd be happy to see your app in our [awesome-apps list](https://github.com/opencloud-eu/awesome-apps/blob/main/README.md). Feel free to make a pull request to the README.md file to add your app.
+If you feel that your app has reached a sufficient level of maturity and you want to publish it, please follow our [publishing guide](https://github.com/opencloud-eu/awesome-apps/tree/main/webApps).
