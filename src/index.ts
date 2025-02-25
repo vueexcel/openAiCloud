@@ -3,8 +3,8 @@ import {
   ApplicationSetupOptions,
   Extension,
   AppMenuItemExtension
-} from '@ownclouders/web-pkg'
-import { urlJoin } from '@ownclouders/web-client'
+} from '@opencloud-eu/web-pkg'
+import { urlJoin } from '@opencloud-eu/web-client'
 import { RouteRecordRaw } from 'vue-router'
 import { computed } from 'vue'
 import { useGettext } from 'vue3-gettext'
