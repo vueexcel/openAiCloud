@@ -1,6 +1,6 @@
 services:
   opencloud:
-    image: ${OC_IMAGE:-opencloud-eu/opencloud-rolling:latest}
+    image: ${OC_IMAGE:-opencloudeu/opencloud-rolling:latest}
     extra_hosts:
       - host.docker.internal:${DOCKER_HOST:-host-gateway}
     entrypoint: /bin/sh
