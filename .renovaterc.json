@@ -4,5 +4,6 @@
       "config:recommended"
     ],
     "prConcurrentLimit": 15,
-    "postUpdateOptions": ["pnpmDedupe"]
+    "postUpdateOptions": ["pnpmDedupe"],
+    "labels": ["Type:Dependencies"]
 }
