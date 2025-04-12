@@ -45,7 +45,7 @@ You should start by rephrasing the app name `skeleton` to your desired app name 
 
 Don't forget to rename the root directory as well.
 
-More details and examples about app/extension development are available in the [developer documentation](https://docs.opencloud.eu/clients/web/extension-system/).
+More details and examples about app/extension development are available in the [developer documentation](https://docs.opencloud.eu/docs/dev/web/extension-system/).
 
 Once you have a working extension, consider making it available via git.
 
@@ -63,7 +63,7 @@ In case you want to set up e2e tests with [playwright](https://playwright.io), y
 
 ### Build For Production
 
-Running `pnpm build` will create a production build of your app in the `dist` folder. It also copies over all static assets placed in the `public` folder. You can then deploy the contents of the `dist` folder to your production environment, see [app deployment](https://docs.opencloud.eu/services/web/#web-apps).
+Running `pnpm build` will create a production build of your app in the `dist` folder. It also copies over all static assets placed in the `public` folder. You can then deploy the contents of the `dist` folder to your production environment, see [app installation](https://docs.opencloud.eu/docs/admin/configuration/web-applications).
 
 ## Publish
 
