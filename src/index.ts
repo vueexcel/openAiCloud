@@ -8,8 +8,15 @@ import { urlJoin } from '@opencloud-eu/web-client'
 import { RouteRecordRaw } from 'vue-router'
 import { computed } from 'vue'
 import { useGettext } from 'vue3-gettext'
+import { createPinia } from 'pinia'
+import './styles/main.css'
+
+const pinia = createPinia()
 
 export default defineWebApplication({
+  setupApp(app) {
+    app.use(pinia)
+  },
   setup(args) {
     const { $gettext } = useGettext()
 

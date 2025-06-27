@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+.btn {
+  @apply px-3 py-1 rounded font-medium cursor-pointer;
+}
+.btn-primary {
+  @apply bg-blue-600 text-white;
+  /* Add hover/transition in template */
+}
+.btn-outline {
+  @apply border border-blue-500 ;
+  /* Add hover/transition in template */
+}
+.btn-xs {
+  @apply text-xs px-2 py-1;
+}
+.handle {
+  @apply cursor-grab;
+}
+
+.input {
+  @apply px-3 py-2 border rounded outline-none;
+}
+.input-xs {
+  @apply text-xs px-1 py-0.5;
+}

@@ -37,5 +37,13 @@
     "vue-tsc": "^2.2.8",
     "vue3-gettext": "^2.4.0"
   },
-  "packageManager": "pnpm@10.11.1"
+  "packageManager": "pnpm@10.11.1",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "chart.js": "^4.5.0",
+    "pinia": "^3.0.3",
+    "tailwindcss": "^4.1.11",
+    "uuid": "^11.1.0",
+    "vue-draggable-next": "^2.2.1"
+  }
 }
