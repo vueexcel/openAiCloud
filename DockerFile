@@ -1,8 +1,18 @@
-# Dockerfile (in root)
+# Stage 1: Build Vue app
+FROM node:18 AS frontend
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml ./
+RUN npm install -g pnpm && pnpm install
+
+COPY . .
+RUN pnpm run build
+
+# Stage 2: Use OpenCloud image
 FROM opencloudeu/opencloud-rolling:latest
 
 COPY ./dev/docker/opencloud/apps.yaml /etc/opencloud/apps.yaml
-COPY ./dist /web/apps/skeleton
+COPY --from=frontend /app/dist /web/apps/skeleton
 
 ENV OC_URL=http://0.0.0.0:9200 \
     OC_INSECURE=true \
