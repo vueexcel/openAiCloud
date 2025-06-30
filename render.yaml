@@ -1,6 +1,6 @@
 envVars:
   - key: OC_URL
-    value: https://opencloud-backend.onrender.com  # Use your actual Render service URL
+    value: https://opencloud-backend.onrender.com  # MUST be public HTTPS
   - key: OC_INSECURE
     value: true
   - key: OC_LOG_LEVEL
@@ -16,4 +16,4 @@ envVars:
   - key: WEB_ASSET_APPS_PATH
     value: /web/apps
   - key: IDM_LDAP_TLS
-    value: false  # Add this to bypass missing LDAP cert
+    value: false
