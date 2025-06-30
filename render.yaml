@@ -26,16 +26,3 @@ services:
         value: false
       - key: WEB_ASSET_APPS_PATH
         value: /web/apps
-
-  - type: static
-    name: vue-frontend
-    buildCommand: pnpm install && pnpm run build
-    staticPublishPath: dist
-    autoDeploy: true
-    buildFilter:
-      paths:
-        - src/**
-        - public/**
-        - package.json
-        - vite.config.ts
-        - pnpm-lock.yaml
