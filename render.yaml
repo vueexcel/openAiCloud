@@ -1,28 +1,19 @@
-services:
-  - type: web
-    name: opencloud-backend
-    env: docker
-    region: oregon
-    plan: free
-    dockerfilePath: Dockerfile
-    autoDeploy: true
-    buildFilter:
-      paths:
-        - Dockerfile
-        - dev/docker/**
-        - dist/**
-    envVars:
-      - key: OC_INSECURE
-        value: true
-      - key: OC_LOG_LEVEL
-        value: error
-      - key: IDM_ADMIN_PASSWORD
-        value: admin
-      - key: IDM_CREATE_DEMO_USERS
-        value: true
-      - key: PROXY_ENABLE_BASIC_AUTH
-        value: true
-      - key: PROXY_TLS
-        value: false
-      - key: WEB_ASSET_APPS_PATH
-        value: /web/apps
+envVars:
+  - key: OC_URL
+    value: https://opencloud-backend.onrender.com  # Use your actual Render service URL
+  - key: OC_INSECURE
+    value: true
+  - key: OC_LOG_LEVEL
+    value: error
+  - key: IDM_ADMIN_PASSWORD
+    value: admin
+  - key: IDM_CREATE_DEMO_USERS
+    value: true
+  - key: PROXY_ENABLE_BASIC_AUTH
+    value: true
+  - key: PROXY_TLS
+    value: false
+  - key: WEB_ASSET_APPS_PATH
+    value: /web/apps
+  - key: IDM_LDAP_TLS
+    value: false  # Add this to bypass missing LDAP cert
