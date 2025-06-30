@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: opencloud-backend
+    env: docker
+    region: oregon
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - Dockerfile
+        - dev/docker/**
+        - dist/**
+    envVars:
+      - key: OC_INSECURE
+        value: true
+      - key: OC_LOG_LEVEL
+        value: error
+      - key: IDM_ADMIN_PASSWORD
+        value: admin
+      - key: IDM_CREATE_DEMO_USERS
+        value: true
+      - key: PROXY_ENABLE_BASIC_AUTH
+        value: true
+      - key: PROXY_TLS
+        value: false
+      - key: WEB_ASSET_APPS_PATH
+        value: /web/apps
+
+  - type: static
+    name: vue-frontend
+    buildCommand: pnpm install && pnpm run build
+    staticPublishPath: dist
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - src/**
+        - public/**
+        - package.json
+        - vite.config.ts
+        - pnpm-lock.yaml

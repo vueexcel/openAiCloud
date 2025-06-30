@@ -1,0 +1,17 @@
+# Dockerfile (in root)
+FROM opencloudeu/opencloud-rolling:latest
+
+COPY ./dev/docker/opencloud/apps.yaml /etc/opencloud/apps.yaml
+COPY ./dist /web/apps/skeleton
+
+ENV OC_URL=http://0.0.0.0:9200 \
+    OC_INSECURE=true \
+    OC_LOG_LEVEL=error \
+    IDM_ADMIN_PASSWORD=admin \
+    IDM_CREATE_DEMO_USERS=true \
+    PROXY_ENABLE_BASIC_AUTH=true \
+    PROXY_TLS=false \
+    WEB_ASSET_APPS_PATH=/web/apps
+
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["opencloud init || true && opencloud server"]
