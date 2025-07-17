@@ -38,7 +38,7 @@
       <!-- Value Distribution -->
       <div v-if="profile.valueHistogram" class="mb-6">
         <h3 class="font-semibold text-md mb-2">Value Distribution</h3>
-        <canvas ref="histCanvas" height="80"></canvas>
+        <canvas ref="histCanvas" height="80" style="max-height: 200px;"></canvas>
       </div>
 
       <!-- PII Table -->

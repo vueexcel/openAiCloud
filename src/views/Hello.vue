@@ -8,20 +8,21 @@
       <PipelineBuilder />
       <NERChunking />
     </div>
-    <!-- <AIChunkingRecommendation /> -->
     <div class="m-4 p-4 rounded-lg border border-stone-400">
-      <!-- <DataProfiler :profile="exampleProfile" /> -->
-      <AnonymizationPanel :fields="piiFields" />
+      <AIChunkingRecommendation />
     </div>
     <div class="m-4 p-4 rounded-lg border border-stone-400">
-      <AudioLog />
+      <DataProfiler :profile="exampleProfile" />
+      <AnonymizationPanel :fields="piiFields"   @update:anonymization="handleAnonymizationUpdate"/>
+    </div>
+    <div class="m-4 p-4 rounded-lg border border-stone-400">
+      <AuditLog :entries="auditEntries" />
       <ExportPanel />
     </div>
 
-    <!-- <PipelineBuilder /> -->
+    <PipelineBuilder @update:pipeline="handlePipelineUpdate" />
   </div>
   <!-- <AnonymizationPanel/> -->
-  <!-- <UserAvatar name="Jane Doe" /> -->
 </template>
 <script setup lang="ts">
 import AIChunkingRecommendation from '../components/AIChunkingRecommendation.vue'
@@ -31,7 +32,6 @@ import DataProfiler from '../components/DataProfiler.vue'
 import DataSourceManager from '../components/DataSourceManager.vue'
 import NERChunking from '../components/NERChunking.vue'
 import PipelineBuilder from '../components/PipelineBuilder.vue'
-import UserAvatar from '../shared/UserAvatar.vue'
 import AuditLog from '../components/AuditLog.vue'
 import ExportPanel from '../components/ExportPanel.vue'
 
@@ -54,21 +54,24 @@ const auditEntries = [
     user: 'Alice',
     type: 'Edit',
     description: 'Changed chunk size from 1000 to 2000.',
-    timestamp: '2024-06-22T14:20:10Z'
+    timestamp: '2024-06-22T14:20:10Z',
+    avatar: ''
   },
   {
     id: 2,
     user: 'Bob',
     type: 'Export',
-    description: 'Exported pipeline as JSON.',
-    timestamp: '2024-06-22T15:40:12Z'
+    description: 'Exported dataset to CSV.',
+    timestamp: '2024-06-23T09:45:00Z',
+    avatar: ''
   },
   {
     id: 3,
     user: 'Alice',
     type: 'Comment',
-    description: 'Added note: Check GDPR for PII columns.',
-    timestamp: '2024-06-21T09:12:30Z'
+    description: 'Left a note on column normalization.',
+    timestamp: '2024-06-23T11:10:00Z',
+    avatar: ''
   }
 ]
 
@@ -96,5 +99,12 @@ const exampleProfile: {
 }
 function uploadedFile(src) {
   console.log(src, 'source')
+}
+function handlePipelineUpdate(updatedPipeline: any[]) {
+  console.log('Pipeline updated in parent:', updatedPipeline)
+}
+
+function handleAnonymizationUpdate(updatedFields) {
+  console.log("Updated fields",updatedFields)
 }
 </script>

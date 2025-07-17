@@ -29,7 +29,7 @@
               <div class="flex items-center space-x-2">
                 <span class="font-semibold text-sm">{{ entry.user }}</span>
                 <span
-                  class="inline-block rounded text-xs px-2 py-0.5"
+                  class="inline-block rounded text-xs py-0.5"
                   :class="typeColor(entry.type)"
                   >{{ entry.type }}</span
                 >
@@ -126,10 +126,10 @@ function defaultAvatar(user: string) {
 </script>
 
 <style scoped>
-.input {
+/* .input {
   @apply px-2 py-1 border rounded outline-none;
 }
 .input-xs {
   @apply text-xs px-1 py-0.5;
-}
+} */
 </style>
